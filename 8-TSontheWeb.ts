@@ -11,3 +11,5 @@ let newShape5: Shape2 = {
 }
 
 document.body.innerHTML = "This is the area " + newShape5.shapeArea2(newShape5.height, newShape5.width)
+
+/* bigger projects will require bundlers like webpack */

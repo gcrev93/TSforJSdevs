@@ -2,28 +2,40 @@
 variable or function. Lets look at the shapeArea function! You can see
 the parameter */
 
-interface Shape {
+interface Rectangle {
     width: number
     height: number
-    shapeArea: Function
 }
 
-let newShape: Shape = {
+let newRec: Rectangle = {
     width: 10, 
-    height: 15,
-    shapeArea: (x: number, y: number) => { return x * y}
+    height: 15
 }
 
-console.log("This is the area " + newShape.shapeArea(newShape.height, newShape.width))
+function getArea(width, height) {
+    return width * height
+}
+
+// function getArea(width: number, height: number) {
+//     return width * height
+// }
+
+// function getArea(shape: { width: number, height: number }) {
+//     return shape.width * shape.height
+// }
+
+//  function getArea(shape: Rectangle) {
+//     return shape.width * shape.height
+//  }
+
+console.log("This is the area " + getArea(newRec.height, newRec.width))
 
 /*
 Now what if we want to be sure the function returns the proper type?
 
-let newShape: Shape = {
-    width: 10, 
-    height: 15,
-    shapeArea: (x, y) : number => { return x * y} ---> change return to return a string
-}
+ function getArea(shape: Shape): number {
+    return shape.width * shape.height
+ }
 
-And yes you can combine the two!
+yes you can combine the two!
 */

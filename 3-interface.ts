@@ -7,19 +7,24 @@ But in some cases, we may want the types to be explicity set instead of inferred
 A good way to do that is to use interfaces */
 
 // We started with:
-// const shape = { width: 10, height: 15 }
-// const shapeArea = shape.width * shape.height
+// const obj2 = { width: 10, height: 15 };
+// const area2 = obj2.width * obj2.height;
 
-interface Shape {
+// console.log("This is the area " + area2)
+
+//Functional way
+interface Rectangle {
     width: number
     height: number
-    shapeArea: Function
 }
 
-let newShape: Shape = {
+let newRec: Rectangle = {
     width: 10, 
-    height: 15,
-    shapeArea: (x, y) => { return x * y}
+    height: 15
 }
 
-console.log("This is the area " + newShape.shapeArea(newShape.height, newShape.width))
+function getArea(width, height) {
+    return width * height
+}
+
+console.log("This is the area " + getArea(newRec.height, newRec.width))
